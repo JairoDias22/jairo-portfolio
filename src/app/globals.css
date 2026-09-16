@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background: #10162a;
+  --foreground: #ede6d6;
+}
+
+@theme inline {
+  --color-ink: #10162a;
+  --color-ink-2: #171f3a;
+  --color-ink-3: #1e2748;
+  --color-paper: #ede6d6;
+  --color-muted: #94a0bd;
+  --color-brass: #c89b3c;
+  --color-brass-soft: #e7c97a;
+  --color-sage: #7fa98c;
+  --color-line: #2c3660;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+}
+
+/* hairline rule used throughout instead of card shadows */
+.rule {
+  border-top: 1px solid var(--color-line);
+}
+
+.rule-b {
+  border-bottom: 1px solid var(--color-line);
+}
+
+/* small stamp-style badge, evokes an ink stamp on a paper file */
+.stamp {
+  border: 1.5px solid var(--color-sage);
+  color: var(--color-sage);
+  transform: rotate(-2deg);
+}
+
+::selection {
+  background: var(--color-brass);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
